@@ -20,6 +20,7 @@ $().ready(function(){
 			$('.myForm #exampleModal').modal();
 		}
 		else{
+				$('.myForm #id').val(0);
 				$('.myForm #first-name').val('');
 				$('.myForm #last-name').val('');
 				$('.myForm #email').val('');
