@@ -9,11 +9,21 @@ $().ready(function(){
 		event.preventDefault();
 		var href = $(this).attr('href');
 		var text = $(this).text();
-		$.get(href,{},function(tempEmployee,status){
-			$('.myForm #first-name').val(tempEmployee.firstName);
-			$('.myForm #last-name').val(tempEmployee.lastName);
-			$('.myForm #email').val(tempEmployee.email);
-		});
-		$('.myForm #exampleModal').modal();
+		if(text != "Add Employee"){
+			$.get(href,{},function(tempEmployee,status){
+				console.log(tempEmployee.firstName);
+				$('.myForm #id').val(tempEmployee.id);
+				$('.myForm #first-name').val(tempEmployee.firstName);
+				$('.myForm #last-name').val(tempEmployee.lastName);
+				$('.myForm #email').val(tempEmployee.email);
+			});
+			$('.myForm #exampleModal').modal();
+		}
+		else{
+				$('.myForm #first-name').val('');
+				$('.myForm #last-name').val('');
+				$('.myForm #email').val('');
+				$('.myForm #exampleModal').modal();
+		}
 	})
 });

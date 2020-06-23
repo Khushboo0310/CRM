@@ -36,7 +36,7 @@
 						placeholder="Search" aria-label="Search" name="employeeName">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img alt="SearchIcon" th:src="@{/images/ico_search.svg}"></button>
 				</form>
-				<a class="btn btn-sm btn-outline-secondary ml-2 addBtn"> Add Employee </a>
+				<a class="btn btn-sm btn-outline-secondary ml-2 addBtn">Add Employee</a>
 			</div>
 		</nav>
 		
@@ -111,7 +111,7 @@
 			<form th:action="@{/employees/save}" 
 				method="POST">
 				<!-- Add hidden form field to handle update -->
-				<!-- <input type="hidden" th:field="*{id}" /> -->
+				<input type="hidden" id="id" name="id" value="" />
 				<div class="modal fade" id="exampleModal" tabindex="-1"
 					role="dialog" aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
@@ -128,27 +128,27 @@
 
 								<div class="form-group">
 									<label for="first-name" class="col-form-label">First
-										Name:</label> <input type="text" id="first-name" class="form-control"
-										placeholder="First name" >
+										Name:</label> <input type="text" id="first-name" name="firstName" value="" class="form-control"
+										placeholder="First name" />
 								</div>
 
 								<div class="form-group">
 									<label for="last-name" class="col-form-label">Last
-										Name:</label> <input type="text" id="last-name" class="form-control"
-										placeholder="Last name">
+										Name:</label> <input type="text" id="last-name" name="lastName" value="" class="form-control"
+										placeholder="Last name" />
 								</div>
 
 								<div class="form-group">
-									<label for="email" class="col-form-label">Email:</label> <input
-										type="text" id="email" class="form-control"
-										placeholder="Email">
+									<label for="email" class="col-form-label">Email:</label>
+									<input type="text" id="email"  name="email" class="form-control" value=""
+										placeholder="Email" />
 								</div>
 
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary">Save</button>
+								<input type="submit" class="btn btn-primary" value="Save" />
 							</div>
 						</div>
 					</div>
